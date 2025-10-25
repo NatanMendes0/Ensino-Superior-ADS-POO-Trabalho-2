@@ -19,8 +19,7 @@ bin/
 # Virtual machine crash logs
 hs_err_pid*
 
-# IDE files
-.vscode/
+# IDE files - keep .vscode/settings.json for project configuration
 .idea/
 *.iml
 *.iws
