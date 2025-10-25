@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Loja {
     private final List<Funcionario> funcionarios = new ArrayList<>();
@@ -27,32 +26,43 @@ public class Loja {
 
     // 5. Listar Assalariados
     public List<Assalariado> listarAssalariados() {
-        return funcionarios.stream()
-                .filter(f -> f instanceof Assalariado)
-                .map(f -> (Assalariado) f)
-                .collect(Collectors.toList());
+        List<Assalariado> assalariados = new ArrayList<>();
+        for (Funcionario f : funcionarios) {
+            if (f instanceof Assalariado) {
+                assalariados.add((Assalariado) f);
+            }
+        }
+        return assalariados;
     }
 
     // 6. Listar Horistas
     public List<Horista> listarHoristas() {
-        return funcionarios.stream()
-                .filter(f -> f instanceof Horista)
-                .map(f -> (Horista) f)
-                .collect(Collectors.toList());
+        List<Horista> horistas = new ArrayList<>();
+        for (Funcionario f : funcionarios) {
+            if (f instanceof Horista) {
+                horistas.add((Horista) f);
+            }
+        }
+        return horistas;
     }
 
     // 7. Listar Comissionados
     public List<Comissionado> listarComissionados() {
-        return funcionarios.stream()
-                .filter(f -> f instanceof Comissionado)
-                .map(f -> (Comissionado) f)
-                .collect(Collectors.toList());
+        List<Comissionado> comissionados = new ArrayList<>();
+        for (Funcionario f : funcionarios) {
+            if (f instanceof Comissionado) {
+                comissionados.add((Comissionado) f);
+            }
+        }
+        return comissionados;
     }
 
     // 8. Calcular o valor total da folha de pagamento
     public double calcularFolha() {
-        return funcionarios.stream()
-                .mapToDouble(Funcionario::calculaSalario)
-                .sum();
+        double total = 0.0;
+        for (Funcionario f : funcionarios) {
+            total += f.calculaSalario();
+        }
+        return total;
     }
 }
