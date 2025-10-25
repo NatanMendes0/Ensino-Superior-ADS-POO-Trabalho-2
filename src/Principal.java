@@ -1,4 +1,17 @@
+/**
+ * Classe principal do sistema de gestão de funcionários.
+ * Contém o método main que demonstra o uso do sistema.
+ * 
+ * @author Sistema de Gestão de Funcionários
+ * @version 1.0
+ */
 public class Principal {
+    /**
+     * Método principal que executa o programa.
+     * Demonstra o cadastro de funcionários, listagem por tipo e cálculo da folha de pagamento.
+     * 
+     * @param args Argumentos da linha de comando (não utilizados)
+     */
     public static void main(String[] args) {
         Loja loja = new Loja();
 
